@@ -1,24 +1,24 @@
+var i = 1;
+
 $(document).ready(function () {
+  $("#next").on("click", getAjax);
 
-    $("#sigmaRoster").on("click", getAjax);
+});
 
-    function getAjax() {
-      $.ajax({
+function getAjax() {
+  $.ajax({
         type: "GET",
         url: "/data",
         success: function (data) {
-            console.log(data);
             updateDom(data.sigmanauts);
           },
       });
-    }
+}
 
-    function updateDom(sigmanauts) {
-      $.each(sigmanauts, function (i, student) {
-        $("#sigma-container").append('<div class="indSigma"></div>');
-        var $el = $("#sigma-container").children().last();
-
-        $el.append('<h2>' + student.name + '</h2>');
-      });
-    }
-  });
+function updateDom(sigmanauts) {
+  $("h2").replaceWith('<h2>' + sigmanauts[i].name + '</h2>');
+  $("a").replaceWith('<a href=https://github.com/' + sigmanauts[i].git_username + '>' + "Check out my Github!" + '</a>');
+  $("p").replaceWith('<p>' + sigmanauts[i].shoutout + '</p>');
+  i++;
+  console.log('#sigma-container');
+}
