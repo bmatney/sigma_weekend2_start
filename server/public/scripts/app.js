@@ -86,6 +86,6 @@ function buildIndex(sigmanauts) {
 }
 
 function highlightSelected() {
-  $('.stuff').css("background-color", "white")
-  $('#index' + i).css("background-color", "cyan")
+  $('.stuff').css("background-color", "teal")
+  $('#index' + i).css("background-color", "grey")
 }
