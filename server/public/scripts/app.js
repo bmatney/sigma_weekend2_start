@@ -92,6 +92,5 @@ function highlightSelected() {
 }
 
 function autoUpdate() {
-  clearInterval();
-  window.setInterval(nextStudent, 1000);
+  setInterval(nextStudent, 10000);
 }
