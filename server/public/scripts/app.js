@@ -28,8 +28,8 @@ function nextStudent() {
 
 function nextButton(sigmanauts) {
   i++;
-  if (i > 19) {
-    i = 19;
+  if (i >= 19) {
+    i = 0;
   }
 
   $('#sigma-container').fadeOut(function () {
@@ -92,5 +92,6 @@ function highlightSelected() {
 }
 
 function autoUpdate() {
-  window.setInterval(nextStudent, 10000);
+  clearInterval();
+  window.setInterval(nextStudent, 1000);
 }
