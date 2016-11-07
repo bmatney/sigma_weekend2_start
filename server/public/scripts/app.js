@@ -10,6 +10,7 @@ $(document).ready(function () {
   $("#next").on("click", nextStudent);
   $("#previous").on("click", previousStudent);
   makeIndex();
+  autoUpdate();
 
 });
 
@@ -88,4 +89,8 @@ function buildIndex(sigmanauts) {
 function highlightSelected() {
   $('.stuff').css("background-color", "teal")
   $('#index' + i).css("background-color", "grey")
+}
+
+function autoUpdate() {
+  window.setInterval(nextStudent, 10000);
 }
